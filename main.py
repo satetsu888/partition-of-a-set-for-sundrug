@@ -1,6 +1,7 @@
 from ortoolpy import set_partition
 import itertools
 import sys
+import random
 
 LOW_LIMIT = 5000
 LOW_LIMIT2 = 3000
@@ -61,10 +62,11 @@ def calc_partition_of_a_set(values):
     print ''
 
 
-values = [[],[],[],[]]
+values = [[],[],[]]
 fh = open(FILE_NAME)
 lines = fh.readlines()
 counter = 0
+random.shuffle(lines)
 for line in lines:
     values[counter%3].append(int(line))
     counter+=1
